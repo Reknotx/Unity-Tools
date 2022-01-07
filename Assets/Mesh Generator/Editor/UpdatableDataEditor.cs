@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Remoting.Channels;
 using UnityEngine;
 using UnityEditor;
 
@@ -15,6 +12,7 @@ public class UpdatableDataEditor : Editor
         if (GUILayout.Button("Update"))
         {
             data.NotifyOfUpdatedValues();
+            EditorUtility.SetDirty(target);
         }
     }
 }
