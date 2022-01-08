@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class HideOnPlay : MonoBehaviour
+namespace Mesh_Generator.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class HideOnPlay : MonoBehaviour
     {
-        gameObject.SetActive(false);
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            gameObject.SetActive(false);
+        }
     
+    }
 }

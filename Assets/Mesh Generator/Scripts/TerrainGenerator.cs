@@ -1,110 +1,113 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerrainGenerator : MonoBehaviour
+namespace Mesh_Generator.Scripts
 {
-    
-    private const float moveDistForChunkUpdate = 25f;
-    private const float sqrMoveDistForChunkUpdate = moveDistForChunkUpdate * moveDistForChunkUpdate;
-    
-    public int colliderLODIndex;
-    public LODInfo[] detailLevels;
-    
-    public Transform viewer;
-    public Material mapMaterial;
-
-    public MeshSettings meshSettings;
-    public HeightMapSettings heightMapSettings;
-    public TextureData textureSettings;
-
-    private Vector2 viewerPosition;
-    private Vector2 viewerPositionOld;
-    private float meshWorldSize;
-    private int chunksVisibleInViewDist;
-
-    private Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
-
-    List<TerrainChunk> visibleTerrainChunks = new List<TerrainChunk>();
-
-    private void Start()
+    public class TerrainGenerator : MonoBehaviour
     {
-        textureSettings.ApplyToMaterial(mapMaterial);
-        textureSettings.UpdateMeshHeights(mapMaterial, heightMapSettings.minHeight, heightMapSettings.maxHeight);
-        
-        float maxViewDist = detailLevels[detailLevels.Length - 1].visibleDistThreshold;
-        meshWorldSize = meshSettings.MeshWorldSize;
-        chunksVisibleInViewDist = Mathf.RoundToInt(maxViewDist / meshWorldSize);
-        
-        UpdateVisibleChunks();
-    }
+    
+        private const float moveDistForChunkUpdate = 25f;
+        private const float sqrMoveDistForChunkUpdate = moveDistForChunkUpdate * moveDistForChunkUpdate;
+    
+        public int colliderLODIndex;
+        public LODInfo[] detailLevels;
+    
+        public Transform viewer;
+        public Material mapMaterial;
 
-    private void Update()
-    {
-        viewerPosition = new Vector2(viewer.position.x, viewer.position.z);
+        public MeshSettings meshSettings;
+        public HeightMapSettings heightMapSettings;
+        public TextureData textureSettings;
 
-        if (viewerPosition != viewerPositionOld)
+        private Vector2 viewerPosition;
+        private Vector2 viewerPositionOld;
+        private float meshWorldSize;
+        private int chunksVisibleInViewDist;
+
+        private Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
+
+        List<TerrainChunk> visibleTerrainChunks = new List<TerrainChunk>();
+
+        private void Start()
         {
-            foreach (TerrainChunk chunk in visibleTerrainChunks)
-            {
-                chunk.UpdateCollisionMesh();
-            }
-        }
+            textureSettings.ApplyToMaterial(mapMaterial);
+            textureSettings.UpdateMeshHeights(mapMaterial, heightMapSettings.minHeight, heightMapSettings.maxHeight);
         
-        if ((viewerPositionOld - viewerPosition).sqrMagnitude > sqrMoveDistForChunkUpdate)
-        {
-            viewerPositionOld = viewerPosition;
+            float maxViewDist = detailLevels[detailLevels.Length - 1].visibleDistThreshold;
+            meshWorldSize = meshSettings.MeshWorldSize;
+            chunksVisibleInViewDist = Mathf.RoundToInt(maxViewDist / meshWorldSize);
+        
             UpdateVisibleChunks();
         }
-    }
 
-    void UpdateVisibleChunks()
-    {
-        HashSet<Vector2> alreadyUpdatedChunkCoords = new HashSet<Vector2>();
-        for (var i = visibleTerrainChunks.Count - 1; i >= 0; i--)
+        private void Update()
         {
-            alreadyUpdatedChunkCoords.Add(visibleTerrainChunks[i].coord);
-            visibleTerrainChunks[i].UpdateTerrainChunk();
+            viewerPosition = new Vector2(viewer.position.x, viewer.position.z);
+
+            if (viewerPosition != viewerPositionOld)
+            {
+                foreach (TerrainChunk chunk in visibleTerrainChunks)
+                {
+                    chunk.UpdateCollisionMesh();
+                }
+            }
+        
+            if ((viewerPositionOld - viewerPosition).sqrMagnitude > sqrMoveDistForChunkUpdate)
+            {
+                viewerPositionOld = viewerPosition;
+                UpdateVisibleChunks();
+            }
         }
 
-        int currentChunkCoordX = Mathf.RoundToInt(viewerPosition.x / meshWorldSize);
-        int currentChunkCoordY = Mathf.RoundToInt(viewerPosition.y / meshWorldSize);
-
-        for (int yOffset = -chunksVisibleInViewDist; yOffset <= chunksVisibleInViewDist; yOffset++)
+        void UpdateVisibleChunks()
         {
-            for (int xOffset = -chunksVisibleInViewDist; xOffset <= chunksVisibleInViewDist; xOffset++)
+            HashSet<Vector2> alreadyUpdatedChunkCoords = new HashSet<Vector2>();
+            for (var i = visibleTerrainChunks.Count - 1; i >= 0; i--)
             {
-                Vector2 viewedChunkCoord = new Vector2(currentChunkCoordX + xOffset, currentChunkCoordY + yOffset);
+                alreadyUpdatedChunkCoords.Add(visibleTerrainChunks[i].coord);
+                visibleTerrainChunks[i].UpdateTerrainChunk();
+            }
 
-                if (!alreadyUpdatedChunkCoords.Contains(viewedChunkCoord))
+            int currentChunkCoordX = Mathf.RoundToInt(viewerPosition.x / meshWorldSize);
+            int currentChunkCoordY = Mathf.RoundToInt(viewerPosition.y / meshWorldSize);
+
+            for (int yOffset = -chunksVisibleInViewDist; yOffset <= chunksVisibleInViewDist; yOffset++)
+            {
+                for (int xOffset = -chunksVisibleInViewDist; xOffset <= chunksVisibleInViewDist; xOffset++)
                 {
-                    if (terrainChunkDictionary.ContainsKey(viewedChunkCoord))
-                        terrainChunkDictionary[viewedChunkCoord].UpdateTerrainChunk();
-                    else
+                    Vector2 viewedChunkCoord = new Vector2(currentChunkCoordX + xOffset, currentChunkCoordY + yOffset);
+
+                    if (!alreadyUpdatedChunkCoords.Contains(viewedChunkCoord))
                     {
-                        TerrainChunk newChunk = new TerrainChunk(viewedChunkCoord, heightMapSettings, meshSettings,
-                            detailLevels, colliderLODIndex, transform, viewer, mapMaterial);
-                        terrainChunkDictionary.Add(viewedChunkCoord, newChunk);
-                        newChunk.onVisibilityChanged += OnChunkVisibilityChanged;
-                        newChunk.Load();
+                        if (terrainChunkDictionary.ContainsKey(viewedChunkCoord))
+                            terrainChunkDictionary[viewedChunkCoord].UpdateTerrainChunk();
+                        else
+                        {
+                            TerrainChunk newChunk = new TerrainChunk(viewedChunkCoord, heightMapSettings, meshSettings,
+                                detailLevels, colliderLODIndex, transform, viewer, mapMaterial);
+                            terrainChunkDictionary.Add(viewedChunkCoord, newChunk);
+                            newChunk.onVisibilityChanged += OnChunkVisibilityChanged;
+                            newChunk.Load();
+                        }
                     }
                 }
             }
         }
-    }
 
-    void OnChunkVisibilityChanged(TerrainChunk chunk, bool isVisible)
+        void OnChunkVisibilityChanged(TerrainChunk chunk, bool isVisible)
+        {
+            if (isVisible) visibleTerrainChunks.Add(chunk);
+            else visibleTerrainChunks.Remove(chunk);
+        }
+    } 
+
+    [System.Serializable]
+    public struct LODInfo
     {
-        if (isVisible) visibleTerrainChunks.Add(chunk);
-        else visibleTerrainChunks.Remove(chunk);
+        [Range(0, MeshSettings.numSupportedLODs - 1)]
+        public int lod;
+        public float visibleDistThreshold;
+
+        public float SqrVisibleDistThreshold => visibleDistThreshold * visibleDistThreshold;
     }
-} 
-
-[System.Serializable]
-public struct LODInfo
-{
-    [Range(0, MeshSettings.numSupportedLODs - 1)]
-    public int lod;
-    public float visibleDistThreshold;
-
-    public float SqrVisibleDistThreshold => visibleDistThreshold * visibleDistThreshold;
 }

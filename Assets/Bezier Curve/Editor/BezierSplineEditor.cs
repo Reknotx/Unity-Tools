@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
+using Bezier_Curve.Scripts;
 using UnityEngine;
 using UnityEditor;
-using static CustomValues;
+using static Bezier_Curve.Scripts.CustomValues;
 
 [CustomEditor(typeof(BezierSpline))]
 public class BezierSplineEditor : Editor

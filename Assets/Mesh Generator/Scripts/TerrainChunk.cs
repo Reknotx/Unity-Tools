@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//#TODO - example TODO comment
+namespace Mesh_Generator.Scripts
+{
+    //#TODO - example TODO comment
     public class TerrainChunk
     {
         private const float colliderGenerationDistThreshold = 5;
@@ -179,3 +181,4 @@ using UnityEngine;
             ThreadedDataRequester.RequestData(() => MeshGenerator.GenerateTerrainMesh(heightMap.values, meshSettings, lod), OnMeshDataReceived);
         }
     }
+}

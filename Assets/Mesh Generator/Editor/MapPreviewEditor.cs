@@ -1,14 +1,17 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(MapPreview))]
-public class MapPreviewEditor : Editor
+namespace Mesh_Generator.Scripts.Editor
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(MapPreview))]
+    public class MapPreviewEditor : UnityEditor.Editor
     {
-        MapPreview mapPreview = (MapPreview) target;
-        if (DrawDefaultInspector() && mapPreview.autoUpdate) mapPreview.DrawMapInEditor();
+        public override void OnInspectorGUI()
+        {
+            MapPreview mapPreview = (MapPreview) target;
+            if (DrawDefaultInspector() && mapPreview.autoUpdate) mapPreview.DrawMapInEditor();
 
-        if (GUILayout.Button("Generate")) mapPreview.DrawMapInEditor();
+            if (GUILayout.Button("Generate")) mapPreview.DrawMapInEditor();
+        }
     }
 }

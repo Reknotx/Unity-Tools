@@ -1,9 +1,12 @@
-public static class CustomValues
+namespace Bezier_Curve.Scripts
 {
-    public enum BezierControlPointMode
+    public static class CustomValues
     {
-        Free,
-        Aligned,
-        Mirrored
+        public enum BezierControlPointMode
+        {
+            Free,
+            Aligned,
+            Mirrored
+        }
     }
 }

@@ -1,25 +1,28 @@
 using UnityEngine;
 
-[CreateAssetMenu()]
-public class HeightMapSettings : UpdatableData
+namespace Mesh_Generator.Scripts
 {
-    public NoiseSettings noiseSettings;
-    
-    public bool useFalloff;
-
-    [Min(1)] public float heightMultiplier;
-    public AnimationCurve heightCurve;
-
-    public float minHeight => heightMultiplier * heightCurve.Evaluate(0f);
-
-    public float maxHeight => heightMultiplier * heightCurve.Evaluate(1f);
-
-    #if UNITY_EDITOR
-    protected override void OnValidate()
+    [CreateAssetMenu(menuName = "Mesh Generator/Height Map Settings")]
+    public class HeightMapSettings : UpdatableData
     {
-        noiseSettings.ValidateValues();
-        base.OnValidate();
-    }
-    #endif
+        public NoiseSettings noiseSettings;
     
+        public bool useFalloff;
+
+        [Min(1)] public float heightMultiplier;
+        public AnimationCurve heightCurve;
+
+        public float minHeight => heightMultiplier * heightCurve.Evaluate(0f);
+
+        public float maxHeight => heightMultiplier * heightCurve.Evaluate(1f);
+
+#if UNITY_EDITOR
+        protected override void OnValidate()
+        {
+            noiseSettings.ValidateValues();
+            base.OnValidate();
+        }
+#endif
+    
+    }
 }
