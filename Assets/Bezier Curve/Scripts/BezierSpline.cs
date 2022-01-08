@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using static Bezier_Curve.Scripts.CustomValues;
 using Vector3 = UnityEngine.Vector3;
 
 namespace Bezier_Curve.Scripts
@@ -16,7 +15,7 @@ namespace Bezier_Curve.Scripts
 
 
         [SerializeField]
-        private BezierControlPointMode[] modes;
+        private CustomValues.BezierControlPointMode[] modes;
 
         [SerializeField]
         private bool loop;
@@ -45,10 +44,10 @@ namespace Bezier_Curve.Scripts
                 new Vector3(4f, 0f, 0f)
             };
 
-            modes = new BezierControlPointMode[]
+            modes = new CustomValues.BezierControlPointMode[]
             {
-                BezierControlPointMode.Free,
-                BezierControlPointMode.Free
+                CustomValues.BezierControlPointMode.Free,
+                CustomValues.BezierControlPointMode.Free
             };
 
         }
@@ -163,9 +162,9 @@ namespace Bezier_Curve.Scripts
             EnforceMode(index);
         }
 
-        public BezierControlPointMode GetControlPointMode(int index) => modes[(index + 1) / 3];
+        public CustomValues.BezierControlPointMode GetControlPointMode(int index) => modes[(index + 1) / 3];
 
-        public void SetControlPointMode(int index, BezierControlPointMode mode)
+        public void SetControlPointMode(int index, CustomValues.BezierControlPointMode mode)
         {
             int modeIndex = (index + 1) / 3;
             modes[modeIndex] = mode;
@@ -180,8 +179,8 @@ namespace Bezier_Curve.Scripts
         private void EnforceMode(int index)
         {
             int modeIndex = (index + 1) / 3;
-            BezierControlPointMode mode = modes[modeIndex];
-            if (mode == BezierControlPointMode.Free || !loop && (modeIndex == 0 || modeIndex == modes.Length - 1))
+            CustomValues.BezierControlPointMode mode = modes[modeIndex];
+            if (mode == CustomValues.BezierControlPointMode.Free || !loop && (modeIndex == 0 || modeIndex == modes.Length - 1))
                 return;
 
             int middleIndex = modeIndex * 3;
@@ -205,7 +204,7 @@ namespace Bezier_Curve.Scripts
 
             Vector3 middle = points[middleIndex];
             Vector3 enforcedTangent = middle - points[fixedIndex];
-            if (mode == BezierControlPointMode.Aligned)
+            if (mode == CustomValues.BezierControlPointMode.Aligned)
                 enforcedTangent = enforcedTangent.normalized * Vector3.Distance(middle, points[enforcedIndex]);
         
             points[enforcedIndex] = middle + enforcedTangent;

@@ -47,13 +47,13 @@ public class ConditionalHidePropertyDrawer : PropertyDrawer
             //if the find failed->fall back to the old system
             if (sourcePropertyValue == null)
             {
-                //original implementation (doens't work with nested serializedObjects)
+                //original implementation (doesn't work with nested serializedObjects)
                 sourcePropertyValue = property.serializedObject.FindProperty(condHAtt.conditionalSourceField);
             }
         }
         else
         {
-            //original implementation (doens't work with nested serializedObjects)
+            //original implementation (doesn't work with nested serializedObjects)
             sourcePropertyValue = property.serializedObject.FindProperty(condHAtt.conditionalSourceField);
         }
 
