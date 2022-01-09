@@ -20,7 +20,6 @@ public class NoiseSettings
 
         public float baseRoughness = 1;
         public float roughness = 2;
-        [Range(0f, 1f)]
         public float persistence = 0.5f;
         public Vector3 center;
         public float minValue;   
