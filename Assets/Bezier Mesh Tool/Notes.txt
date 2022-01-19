@@ -1,0 +1,19 @@
+Notes for bezier mesh tool
+
+1. Needs to generate bezier curves initially in the form of a cylinder.
+1a. There will be multiple curves needed (Let's start off with three curves initially)
+1b. The curves will be located bottom, middle, and on the top of the cylinder.
+
+2. A cylinder needs be generated using the curves.
+2a. The vertices will be offset based on the positioning of the curves.
+2b. The vertices will need to be updated everytime the points are moved.
+2c. The easiest method of generating the mesh would be to split it up into 3 individual pieces. (top, bottom, side)
+2d. The normals will need to be calculated and normalized at the points where the vertices meet.
+
+3. A texture needs to be displayed on the generated mesh.
+3a. This will require a custom shader to be coded in.
+
+4. The top and bottom of the cylinder will be initially flat.
+4a. Extra vertices can be added to the mesh faces so that bumps can be added to 
+make the mesh appear a bit uneven so it isn't a fully flat surface.
+4b. A noise map can be generated to add small deformation to the face, but this is also unnecessary.
