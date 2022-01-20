@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="18b752e7-0867-4ff9-8780-f26693e58311" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Bezier Curve/Scripts/BezierSpline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bezier Curve/Scripts/BezierSpline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Editor/ConditionalHidePropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Editor/ConditionalHidePropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scenes/Procedural Planet.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scenes/Procedural Planet.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ColorSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ColorSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ConditionalHideAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ConditionalHideAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/INoiseFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/INoiseFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/NoiseFilterFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/NoiseFilterFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/NoiseSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/NoiseSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/Planet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/Planet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/RigidNoiseFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/RigidNoiseFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ShapeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ShapeGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ShapeSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/ShapeSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/SimpleNoiseFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/SimpleNoiseFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/TerrainFace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Scripts/TerrainFace.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planet Generator/Settings/New Shape Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planet Generator/Settings/New Shape Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Mesh Generator/Scripts/Data/TextureData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mesh Generator/Scripts/Data/UpdatableData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/89/d452d16f/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mesh Generator/Editor/UpdatableDataEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ca9a09aeae542ab86253a551b1c89a076e000/37/aa00e068/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3c9e850c90c548a0af7e388089bbdae93ea98/8c/701b23b1/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/51c9fc2d1be048cfa2dd679deaa7d4f717a300/f5/8b7a4d7c/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mesh Generator/Scripts/Terrain.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/51c9fc2d1be048cfa2dd679deaa7d4f717a300/2d/1a0d1277/0200014C.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ca9a09aeae542ab86253a551b1c89a076e000/27/f6ca0668/SerializedPropertyType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/3c9e850c90c548a0af7e388089bbdae93ea98/0d/e8fcda5d/02000095.il" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23J4Vp8VVqYvRjMW32ZnCURnsv9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="CSharpTypeConversionHintsOptions" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18b752e7-0867-4ff9-8780-f26693e58311" name="Changes" comment="" />
+      <created>1641438885838</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641438885838</updated>
+      <workItem from="1641438889090" duration="7270000" />
+      <workItem from="1641447052506" duration="6218000" />
+      <workItem from="1641514161182" duration="14241000" />
+      <workItem from="1641589572660" duration="17253000" />
+      <workItem from="1642645968357" duration="5265000" />
+      <workItem from="1642706304955" duration="11588000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
