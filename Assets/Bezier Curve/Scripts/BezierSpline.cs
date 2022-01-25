@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Bezier_Curve.Scripts
 {
@@ -146,16 +145,9 @@ namespace Bezier_Curve.Scripts
                 }
                 else
                 {
+                    if (index > 0) points[index - 1] += delta;
 
-                    if (index > 0)
-                    {
-                        points[index - 1] += delta;
-                    }
-
-                    if (index + 1 < points.Length)
-                    {
-                        points[index + 1] += delta;
-                    }
+                    if (index + 1 < points.Length) points[index + 1] += delta;
                 }
             }
             points[index] = point;

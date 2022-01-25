@@ -111,6 +111,7 @@ public class Path
         }
     }
 
+    
     public Vector2[] GetPointsInSegment(int i)
     {
         return new[]
@@ -122,6 +123,8 @@ public class Path
         };
     }
 
+    //TODO - Change to allow for 3D support
+    //TODO - Flip it so that the curve works on the x and z rather than x and y
     public void MovePoint(int i, Vector2 pos)
     {
         Vector2 deltaMove = pos - points[i];
